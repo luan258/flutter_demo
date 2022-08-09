@@ -43,17 +43,37 @@ class LandingPage extends StatelessWidget {
               ],
             )),
           Expanded(
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 100),     //tesst
-                child: RawMaterialButton(
-                  onPressed: (){
-                    // Navigator.push(context,MaterialPageRoute(builder: (context) => const HomePage()));
-                    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_)=> const HomePage()), (route) => false);
-                  },
-                  fillColor: AppColors.lightBlue,
-                  shape: const CircleBorder(),
-                  child: const Icon(Icons.navigate_next,size: 60),
-                ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 100),     //tesst
+                    child: RawMaterialButton(
+                      onPressed: (){
+                        // Navigator.push(context,MaterialPageRoute(builder: (context) => const HomePage()));
+                        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_)=> const HomePage()), (route) => false);
+                      },
+                      fillColor: AppColors.lightBlue,
+                      shape: const CircleBorder(),
+                      child: const Icon(Icons.navigate_next,size: 60),
+                    ),
+                  ),Padding(
+                    padding: const EdgeInsets.only(bottom: 100),     //tesst
+                    child: RawMaterialButton(
+                      onPressed: (){
+                        // Navigator.push(context,MaterialPageRoute(builder: (context) => const HomePage()));
+                        // Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_)=> const HomePage()), (route) => false);
+                        // showAlertDialog(context); 
+                      },
+                      fillColor: AppColors.lightBlue,
+                      shape: const CircleBorder(),
+                      child: const Padding(
+                        padding: EdgeInsets.all(15.0),
+                        child: Icon(Icons.account_balance_wallet,size: 30),
+                      ),
+                    ),
+                  )
+                ],
               ),
               )
         ]),
@@ -61,3 +81,30 @@ class LandingPage extends StatelessWidget {
     );
   }
 }
+
+// showAlertDialog(BuildContext context) {  
+//   // Create button  
+//   Widget okButton = TextButton(  
+//     child: const Text("OK"),  
+//     onPressed: () {  
+//       Navigator.of(context).pop();  
+//     },  
+//   );  
+  
+//   // Create AlertDialog  
+//   AlertDialog alert = AlertDialog(  
+//     title: const Text("Simple Alert"),  
+//     content: const Text("This is an alert message."),  
+//     actions: [  
+//       okButton,  
+//     ],  
+//   );  
+  
+//   // show the dialog  
+//   showDialog(  
+//     context: context,  
+//     builder: (BuildContext context) {  
+//       return alert;  
+//     },  
+//   );  
+// }  
